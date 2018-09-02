@@ -1,0 +1,5 @@
+{
+    "content": "./content",
+    "output": "./public",
+    "renderer": "./template/template.tsx"
+}

@@ -15,4 +15,4 @@ import {
 CategoryServiceFactory.setDefaultConfiguration(new CategoryConfiguration(LogLevel.Debug));
 
 // Create categories, they will autoregister themselves, one category without parent (root) and a child category.
-export const ssgLogger = new Category('ssg');
+export const logger = new Category('ssg');
