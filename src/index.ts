@@ -35,7 +35,7 @@ function dump(obj: any) {
 /**
  * The sitegenerator
  */
-class SiteGenerator extends Command {
+export class SiteGenerator extends Command {
     public static description = 'describe the command here';
 
     public static flags = {
@@ -125,4 +125,5 @@ class SiteGenerator extends Command {
     }
 }
 
-export = SiteGenerator;
+export { AssetEntity } from './entities/asset.entity';
+export { PostEntity } from './entities/post.entity';
