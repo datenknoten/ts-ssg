@@ -3,6 +3,7 @@
     "version": "0.2.2",
     "description": "A static site generator using typescript, react and marked",
     "main": "src/index.ts",
+    "private": false,
     "scripts": {
         "commitmsg": "commitlint -e $GIT_PARAMS",
         "lint": "tslint -p tsconfig.json",
