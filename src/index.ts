@@ -109,7 +109,7 @@ class SiteGenerator extends Command {
                 if (file instanceof PostEntity) {
                     await fse.writeFile(
                         absoluteFileName.replace(/\.md$/, '.html'),
-                        react.renderToStaticMarkup(render(file, files))
+                        react.renderToStaticMarkup(render(file, files)),
                     );
                 } else {
                     await fse.writeFile(absoluteFileName, file.content);

@@ -4,6 +4,7 @@
     ],
     "rules": {
         "file-header": [true, "@license MIT", "@license MIT"],
-        "no-submodule-imports": [true, "react-dom"]
+        "no-submodule-imports": [true, "react-dom", "@oclif"],
+        "newline-per-chained-call": [false]
     }
 }
