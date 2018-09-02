@@ -1,3 +1,9 @@
+#### 0.2.3 (2018-09-02)
+
+##### Continuous Integration
+
+*  make package public (c9613795)
+
 #### 0.2.2 (2018-09-02)
 
 ##### Continuous Integration
