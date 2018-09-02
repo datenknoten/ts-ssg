@@ -14,11 +14,8 @@
     },
     "author": "Tim Schumacher",
     "license": "MIT",
-    "files": [
-        "/bin"
-    ],
-    "oclif": {
-        "bin": "site-generator"
+    "bin": {
+        "ts-ssg": "./files/run"
     },
     "dependencies": {
         "@oclif/command": "^1.5.0",
