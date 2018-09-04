@@ -1,6 +1,4 @@
 #!/usr/bin/env node
 
-require('ts-node/register');
-
-require(`../src`).SiteGenerator.run()
+require(`../dist`).SiteGenerator.run()
 .catch(require('@oclif/errors/handle'))
