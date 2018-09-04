@@ -6,6 +6,7 @@ stages:
 
 before_script:
     - npm install
+    - npm run build
 
 Test Sources:
     stage: test
