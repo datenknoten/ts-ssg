@@ -1,3 +1,9 @@
+### 0.4.0 (2018-09-04)
+
+##### Continuous Integration
+
+*  build the sources before doing anything (37bfbfff)
+
 ### 0.3.0 (2018-09-04)
 
 ##### New Features
