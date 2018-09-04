@@ -1,3 +1,9 @@
+### 0.3.0 (2018-09-04)
+
+##### New Features
+
+*  add a build process (c53d8ac3)
+
 #### 0.2.3 (2018-09-02)
 
 ##### Continuous Integration
