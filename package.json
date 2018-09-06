@@ -17,6 +17,13 @@
     },
     "author": "Tim Schumacher",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/datenknoten/ts-ssg"
+    },
+    "bugs": {
+        "url": "https://github.com/datenknoten/ts-ssg/issues"
+    },
     "bin": {
         "ts-ssg": "./files/run"
     },
