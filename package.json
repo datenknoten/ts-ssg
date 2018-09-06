@@ -20,9 +20,6 @@
     "bin": {
         "ts-ssg": "./files/run"
     },
-    "files": [
-        "/bin"
-    ],
     "oclif": {
         "bin": "site-generator"
     },
