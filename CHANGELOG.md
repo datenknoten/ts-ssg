@@ -1,3 +1,13 @@
+#### 0.4.1 (2018-09-06)
+
+##### Chores
+
+*  add some project meta data ([9d931504](https://github.com/datenknoten/ts-ssg/commit/9d9315043262ee4bd3bf63a70b032fe9e7b2209c))
+
+##### Bug Fixes
+
+*  publish all files to npmjs ([57f2f4f3](https://github.com/datenknoten/ts-ssg/commit/57f2f4f32748dacc839ab69d9ec28f9f30cf8c22))
+
 ### 0.4.0 (2018-09-04)
 
 ##### Continuous Integration
