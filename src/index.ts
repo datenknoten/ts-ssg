@@ -83,7 +83,9 @@ export class SiteGenerator extends Command {
 
             logger.debug(`reading content from ${contentPath}`);
 
-            const contents = await read(contentPath);
+            const contents = await read(contentPath, {
+                encoding: null,
+            });
 
             const files: Array<AssetEntity | PostEntity> = [];
 
