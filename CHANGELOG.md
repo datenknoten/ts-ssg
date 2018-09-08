@@ -1,3 +1,9 @@
+#### 0.5.1 (2018-09-08)
+
+##### Bug Fixes
+
+*  repair binary assets ([facf5f40](https://github.com/datenknoten/ts-ssg/commit/facf5f40eec35083ece27a6be9c14e8fcd97461b))
+
 ### 0.5.0 (2018-09-08)
 
 ##### New Features
