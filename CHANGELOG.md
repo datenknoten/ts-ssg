@@ -1,3 +1,9 @@
+### 0.5.0 (2018-09-08)
+
+##### New Features
+
+*  add more metadata information ([57211475](https://github.com/datenknoten/ts-ssg/commit/57211475311dd995a1c1523cc44064345fdc6d96))
+
 #### 0.4.1 (2018-09-06)
 
 ##### Chores
