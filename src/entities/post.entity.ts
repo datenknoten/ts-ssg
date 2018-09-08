@@ -28,10 +28,12 @@ export class PostEntity extends AssetEntity {
         const header = gm(content.toString());
         this._content = Buffer.from(header.content.trim());
         this.metadata.title = header.data['title'];
-        this.metadata.type = header.data['type'];
+        this.metadata.type = (typeof header.data['type'] === 'undefined' ? 'post' : header.data['type']);
         if (header.data['date']) {
-        this.metadata.date = moment(header.data['date']).toDate();
+            this.metadata.date = moment(header.data['date']).toDate();
         }
+        this.metadata.menu = header.data['menu'];
+        this.metadata.weight = header.data['weight'];
     }
 
     public constructor() {
