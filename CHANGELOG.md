@@ -1,3 +1,9 @@
+#### 0.5.2 (2018-09-08)
+
+##### New Features
+
+*  insert a doctype into the final document ([5d02d212](https://github.com/datenknoten/ts-ssg/commit/5d02d2122ee0d914e26490b729f3c2eace331b61))
+
 #### 0.5.1 (2018-09-08)
 
 ##### Bug Fixes
