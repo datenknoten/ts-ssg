@@ -1,5 +1,10 @@
 {
+    "title": "Example Blog",
+    "description": "Example Blog Description",
+    "copyright": "",
+    "absoluteUrl": "http://example.com",
     "content": "./content",
     "output": "./public",
-    "renderer": "./template/template.tsx"
+    "renderer": "./template/template.tsx",
+    "feed": true
 }

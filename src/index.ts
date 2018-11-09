@@ -6,6 +6,7 @@ import {
     Command,
     flags,
 } from '@oclif/command';
+import { Feed } from 'feed';
 import * as fse from 'fs-extra';
 import * as _mkdirp from 'mkdirp';
 import * as path from 'path';
@@ -88,6 +89,19 @@ export class SiteGenerator extends Command {
             });
 
             const files: Array<AssetEntity | PostEntity> = [];
+            const feed = new Feed({
+                title: config.title,
+                description: config.description,
+                id: config.absoluteUrl,
+                link: config.absoluteUrl,
+                feed: `${config.absoluteUrl}/feed.xml`,
+                copyright: config.copyright,
+                feedLinks: {
+                    atom: `${config.absoluteUrl}/feed.xml`,
+                    json: `${config.absoluteUrl}/feed.json`,
+                    rss: `${config.absoluteUrl}/feed.rss`,
+                },
+            });
 
             for (const filePath of Object.keys(contents)) {
                 let entity: AssetEntity;
@@ -109,13 +123,26 @@ export class SiteGenerator extends Command {
                 const absoluteFilePath = path.dirname(absoluteFileName);
                 await mkdirp(absoluteFilePath);
                 if (file instanceof PostEntity) {
+                    const itemContent = `<!DOCTYPE html>${react.renderToStaticMarkup(render(file, files))}`;
+                    feed.addItem({
+                        title: file.metadata.title,
+                        content: itemContent,
+                        link: `${config.absoluteUrl}/${file.relativPath.replace(/\.md$/, '.html')}`,
+                        date: file.metadata.date,
+                    });
                     await fse.writeFile(
                         absoluteFileName.replace(/\.md$/, '.html'),
-                        `<!DOCTYPE html>${react.renderToStaticMarkup(render(file, files))}`,
+                        itemContent,
                     );
                 } else {
                     await fse.writeFile(absoluteFileName, file.content);
                 }
+            }
+
+            if (config.feed === true) {
+                await fse.writeFile(path.resolve(outputPath, 'feed.xml'), feed.atom1());
+                await fse.writeFile(path.resolve(outputPath, 'feed.json'), feed.json1());
+                await fse.writeFile(path.resolve(outputPath, 'feed.rss'), feed.rss2());
             }
 
             logger.info(`Finished writing ${files.length} files`);
