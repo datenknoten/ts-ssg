@@ -8,9 +8,10 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "lint": "tslint -p tsconfig.json",
-    "release:major": "npm run prepush && changelog -M && git add CHANGELOG.md && git commit --no-verify -m \"updated CHANGELOG.md\" && npm version major && git push origin && git push origin --tags",
-    "release:minor": "npm run prepush && changelog -m && git add CHANGELOG.md && git commit --no-verify -m \"updated CHANGELOG.md\" && npm version minor && git push origin && git push origin --tags",
-    "release:patch": "npm run prepush && changelog -p && git add CHANGELOG.md && git commit --no-verify -m \"updated CHANGELOG.md\" && npm version patch && git push origin && git push origin --tags",
+    "check-sources": "npm run lint && npm run test",
+    "release:major": "npm run check-sources && changelog -M && git add CHANGELOG.md && git commit --no-verify -m \"updated CHANGELOG.md\" && npm version major && git push origin && git push origin --tags",
+    "release:minor": "npm run check-sources && changelog -m && git add CHANGELOG.md && git commit --no-verify -m \"updated CHANGELOG.md\" && npm version minor && git push origin && git push origin --tags",
+    "release:patch": "npm run check-sources && changelog -p && git add CHANGELOG.md && git commit --no-verify -m \"updated CHANGELOG.md\" && npm version patch && git push origin && git push origin --tags",
     "test": "node -r ts-node/register files/run --config example/settings.json"
   },
   "author": "Tim Schumacher",
@@ -62,7 +63,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
-      "pre-push": "npm run lint && npm run test"
+      "pre-push": "npm run check-sources"
     }
   }
 }

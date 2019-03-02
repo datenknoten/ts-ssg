@@ -11,7 +11,7 @@ before_script:
 Test Sources:
     stage: test
     script:
-        - npm run prepush
+        - npm run check-sources
 
 Publish Sources:
     stage: publish
