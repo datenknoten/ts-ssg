@@ -50,6 +50,9 @@ export class SiteGenerator extends Command {
         }),
     };
 
+    /**
+     * Run the document creation pipeline
+     */
     public async run() {
         try {
             const parsed = this.parse(SiteGenerator);
