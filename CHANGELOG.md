@@ -1,3 +1,22 @@
+### 0.6.0 (2019-03-02)
+
+##### Chores
+
+*  fix linting issue ([78e9dc45](https://github.com/datenknoten/ts-ssg/commit/78e9dc45815f73b0768bd8398c4deff7db1cfd42))
+*  update deps ([93493b19](https://github.com/datenknoten/ts-ssg/commit/93493b194ad3e1038955c6159171aba1e6e5ef91))
+
+##### Continuous Integration
+
+*  reflect changes ([0d92e699](https://github.com/datenknoten/ts-ssg/commit/0d92e69954a11d91cafd3c4a1b871371736270da))
+
+##### Documentation Changes
+
+*  add a readme ([c4bad3c1](https://github.com/datenknoten/ts-ssg/commit/c4bad3c13a9718f6d5890f1d69433470dc86616a))
+
+##### New Features
+
+*  add the ability to generate a feed ([8751cc76](https://github.com/datenknoten/ts-ssg/commit/8751cc769e9aba2e0c807a42ec9cf6421cf796bc))
+
 #### 0.5.2 (2018-09-08)
 
 ##### New Features
