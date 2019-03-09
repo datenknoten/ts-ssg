@@ -1,3 +1,9 @@
+### 0.7.0 (2019-03-09)
+
+##### New Features
+
+*  add support for syntax highlighting ([fe4fd9aa](https://github.com/datenknoten/ts-ssg/commit/fe4fd9aa36cbc2e05ac0b75cde69cb07f74aeabe))
+
 ### 0.6.0 (2019-03-02)
 
 ##### Chores
