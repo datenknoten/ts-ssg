@@ -33,6 +33,11 @@ export class PostEntity extends AssetEntity {
     }
 
     public set content(content: Buffer) {
+        if (content.toString().startsWith('<html>')) {
+            // if the content has been already rendered skip the whole parsing business
+            this._content = content;
+            return;
+        }
         const header = gm(content.toString());
         this._content = Buffer.from(header.content.trim());
         this.metadata.title = header.data['title'];
