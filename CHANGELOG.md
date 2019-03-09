@@ -1,3 +1,9 @@
+#### 0.7.1 (2019-03-09)
+
+##### Bug Fixes
+
+*  dont introduce whitespaces ([f4a7c61a](https://github.com/datenknoten/ts-ssg/commit/f4a7c61a8c2fad228c37b8f43ed8fe96651cfe77))
+
 ### 0.7.0 (2019-03-09)
 
 ##### New Features
