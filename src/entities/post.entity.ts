@@ -72,11 +72,8 @@ export class PostEntity extends AssetEntity {
                 const highlight = prism.highlight(code, prism.languages[language]);
                 $(this)
                     .parent()
-                    .replaceWith($(`<pre class="line-numbers language-${language}">
-<code class="language-${language}">
-${highlight}
-</code>
-</pre>`));
+                    // tslint:disable-next-line:max-line-length
+                    .replaceWith($(`<pre class="line-numbers language-${language}"><code class="language-${language}">${highlight}</code></pre>`));
             });
             this.content = Buffer.from($.html());
         }
