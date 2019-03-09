@@ -1,3 +1,9 @@
+#### 0.7.2 (2019-03-09)
+
+##### Bug Fixes
+
+*  don't parse the files if they have been parsed already ([aec0804a](https://github.com/datenknoten/ts-ssg/commit/aec0804ae3bb12a6f2ef5ba7c26b5ad1d76be537))
+
 #### 0.7.1 (2019-03-09)
 
 ##### Bug Fixes
