@@ -11,3 +11,13 @@ With some bullets:
 
 * point 1
 * ponit 2
+
+```
+code 1
+```
+
+```typescript
+export class foobar {
+
+}
+```

@@ -53,6 +53,7 @@ export class SiteGenerator extends Command {
     /**
      * Run the document creation pipeline
      */
+    // tslint:disable-next-line
     public async run() {
         try {
             const parsed = this.parse(SiteGenerator);
@@ -67,6 +68,9 @@ export class SiteGenerator extends Command {
             const contentPath = path.resolve(projectPath, config.content);
             const outputPath = path.resolve(projectPath, config.output);
             const rendererPath = path.resolve(projectPath, config.renderer);
+            const beautifyOptions = (typeof config.beautify === 'object' && config.beautify !== null ?
+                                     config.beautify :
+                                     { code: false });
 
             if (!(await fse.pathExists(rendererPath))) {
                 throw new Error('Could not load renderer from file');
@@ -116,6 +120,9 @@ export class SiteGenerator extends Command {
                 entity.relativPath = filePath;
                 entity.absolutePath = path.resolve(contentPath, filePath);
                 entity.content = Buffer.from(contents[filePath]);
+                if (entity instanceof PostEntity) {
+                    await entity.beautify(beautifyOptions);
+                }
 
                 files.push(entity);
             }
@@ -152,10 +159,11 @@ export class SiteGenerator extends Command {
 
         } catch (error) {
             logger.info(`Failed to render your site: ${error.message}`);
+            logger.info(`Stack: ${error.stack}`);
             process.exit(1);
         }
     }
 }
 
 export { AssetEntity } from './entities/asset.entity';
-export { PostEntity } from './entities/post.entity';
+export { BeautifyOptions, PostEntity } from './entities/post.entity';
